@@ -30,12 +30,18 @@ namespace POlab4
             this.LastName = lastName;
             this.DateBirth = dateBirth;
             this.Address = address;
+            this.IsSavedToFile = false;
+            this.IsReadyToBeDeleted = false;
         }
         public Person() { }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string DateBirth { get; set; }
         public string Address { get; set; }
+        [XmlIgnore]
+        public bool IsSavedToFile { get; set; }
+        [XmlIgnore]
+        public bool IsReadyToBeDeleted { get; set; }
         // RANDOM ID
         public string ID = Guid.NewGuid().ToString().ToLower();
 
